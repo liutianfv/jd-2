@@ -1,0 +1,143 @@
+/* 在分类里面也要引入公共的样式 */
+
+@import 'base.less';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* 给body添加padding让main往下挤  */
+    padding: 0.4rem 0px 0.5rem;
+}
+
+/* 头部区域的样式 */
+
+#header {
+    background-color: #f5f5f5;
+    display: flex;
+    height: 0.4rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    >a {
+        width: 0.4rem;
+        height: 0.4rem;
+        display: block;
+        padding: 0.1rem;
+        &.icon-back {
+            background-position: -0.2rem 0;
+        }
+        &.icon-menu {
+            background-position: -0.6rem 0;
+        }
+    }
+    form {
+        flex: 1;
+        padding-top: 0.05rem;
+        position: relative;
+        .icon-search {
+            position: absolute;
+            left: 0.05rem;
+            top: 0.1rem;
+            width: 0.2rem;
+            height: 0.2rem;
+            background-position: -0.6rem -1.1rem;
+        }
+        >input {
+            height: 0.3rem;
+            width: 100%;
+            border-radius: 15px;
+            padding-left: 0.3rem;
+        }
+    }
+}
+
+/* 中间主体区域样式 */
+
+#main {
+    display: flex;
+    height: 100%;
+    overflow: hidden; //  width: 100%;
+    .category-left {
+        height: 100%;
+        width: 0.7rem;
+        text-align: center;
+        .swiper-slide {
+            // font-size: 0.18rem;
+            height: auto; // -webkit-box-sizing: border-box;
+            // box-sizing: border-box;
+            // padding: 0.3rem;
+        }
+        ul {
+            li {
+                line-height: 0.4rem;
+            }
+        }
+    }
+    .swiper-container {
+        overflow: visible;
+    }
+    .category-right {
+        flex: 1;
+        height: 100%;
+        display: flex; //所有品牌列表
+        .swiper-slide {
+            height: auto;
+        }
+        #branchList {
+            //每个品牌容器
+            .jd-brand {
+                .title {
+                    margin-left: 0.1rem;
+                }
+                .content {
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        li {
+                            width: 33%;
+                            text-align: center;
+                            margin-top: 0.1rem;
+                            margin-bottom: 0.1rem;
+                            padding-left: 0.1rem;
+                            img {
+                                width: 100%;
+                            }
+                            span {
+                                line-height: 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 尾部  */
+
+//京东底部区域
+#footer {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    bottom: 0px;
+    z-index: 999;
+    max-width: 7.5rem;
+    ul {
+        display: flex;
+        li {
+            width: 100%;
+            flex: 1;
+            >a {
+                display: block;
+                text-align: center;
+                >img {
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}
